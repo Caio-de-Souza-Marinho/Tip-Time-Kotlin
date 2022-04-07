@@ -55,6 +55,17 @@
             android:layout_height="wrap_content"
             android:text="Regular (15%)"
             />
-
     </RadioGroup>
+
+    <Switch
+        android:id="@+id/round_up_switch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Arredondar gorjeta?"
+        android:checked="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tip_options"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
