@@ -7,5 +7,5 @@
     <string name="servico_regular_15">Regular (15%)</string>
     <string name="arredondar_gorjeta">Arredondar gorjeta?</string>
     <string name="calcular">Calcular</string>
-    <string name="total_da_gorjeta">Total da gorjeta</string>
+    <string name="total_da_gorjeta">Total da gorjeta: %s</string>
 </resources>

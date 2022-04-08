@@ -75,7 +75,7 @@
         android:id="@+id/tip_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/total_da_gorjeta"
+        tools:text="Total da gorjeta: R$10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/calculate_button" />
 

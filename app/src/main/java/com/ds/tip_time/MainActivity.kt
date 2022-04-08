@@ -46,5 +46,8 @@ class MainActivity : AppCompatActivity() {
 
         //Formatação em moeda da gorjeta
         val formatedTip = NumberFormat.getCurrencyInstance().format(tip)
+
+        //Exibindo o valor da gorjeta
+        binding.tipResult.text = getString(R.string.total_da_gorjeta, formatedTip)
     }
 }
