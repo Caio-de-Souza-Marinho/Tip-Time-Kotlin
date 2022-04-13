@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     private fun calculateTip(){
 
         //Variavel que armazena o atributo de texto de EditText e o converde do tipo Editable para String
-        val stringInTextField = binding.costOfService.text.toString()
+        val stringInTextField = binding.costOfServiceEditText.text.toString()
 
         //Variavel que armazena a variavel stringInTextField e a transforma no tipo Double
         val cost = stringInTextField.toDouble()
