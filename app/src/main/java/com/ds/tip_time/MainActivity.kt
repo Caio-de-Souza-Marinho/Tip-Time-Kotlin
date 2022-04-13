@@ -6,7 +6,7 @@ import com.ds.tip_time.databinding.ActivityMainBinding
 import java.text.NumberFormat
 
 class MainActivity : AppCompatActivity() {
-    lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         binding.calculateButton.setOnClickListener { calculateTip() }
     }
     //Método que calcula a gorjeta
-    fun calculateTip(){
+    private fun calculateTip(){
 
         //Variavel que armazena o atributo de texto de EditText e o converde do tipo Editable para String
         val stringInTextField = binding.costOfService.text.toString()
@@ -26,10 +26,9 @@ class MainActivity : AppCompatActivity() {
         val cost = stringInTextField.toDouble()
 
         //Acessa o atributo checkedRadioButton do RadioGroup
-        val selectedId = binding.tipOptions.checkedRadioButtonId
 
         //Acessando a porcentagem da gorjeta
-        val tipPercentage = when(selectedId){
+        val tipPercentage = when(binding.tipOptions.checkedRadioButtonId){
             R.id.option_twenty_percent -> 0.20
             R.id.option_eighteen_percent -> 0.18
             else -> 0.15
@@ -39,8 +38,7 @@ class MainActivity : AppCompatActivity() {
         var tip = tipPercentage * cost
 
         //Arredondar gorjeta
-        val roundUp = binding.roundUpSwitch.isChecked
-        if (roundUp){
+        if (binding.roundUpSwitch.isChecked){
             tip = kotlin.math.ceil(tip)
         }
 
