@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     //Método que calcula a gorjeta
-    private fun calculateTip(){
+    private fun calculateTip() {
 
         //Variavel que armazena o atributo de texto de EditText e o converde do tipo Editable para String
         val stringInTextField = binding.costOfServiceEditText.text.toString()
@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         //Acessa o atributo checkedRadioButton do RadioGroup
 
         //Acessando a porcentagem da gorjeta
-        val tipPercentage = when(binding.tipOptions.checkedRadioButtonId){
+        val tipPercentage = when (binding.tipOptions.checkedRadioButtonId) {
             R.id.option_twenty_percent -> 0.20
             R.id.option_eighteen_percent -> 0.18
             else -> 0.15
@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         var tip = tipPercentage * cost
 
         //Arredondar gorjeta
-        if (binding.roundUpSwitch.isChecked){
+        if (binding.roundUpSwitch.isChecked) {
             tip = kotlin.math.ceil(tip)
         }
 
@@ -61,6 +61,7 @@ class MainActivity : AppCompatActivity() {
         //Exibindo o valor da gorjeta
         binding.tipResult.text = getString(R.string.total_da_gorjeta, formatedTip)
     }
+
     // Key Listener para esconder o teclado quando a tecla "enter" for apertada.
     private fun handleKeyEvent(view: View, keyCode: Int): Boolean {
         if (keyCode == KeyEvent.KEYCODE_ENTER) {
