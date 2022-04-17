@@ -37,7 +37,8 @@
                 android:id="@+id/cost_of_service_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal"/>
+                android:inputType="numberDecimal"
+                android:textColorHint="#757575" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

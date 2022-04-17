@@ -1,7 +1,11 @@
 package com.ds.tip_time
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.KeyEvent
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import com.ds.tip_time.databinding.ActivityMainBinding
 import java.text.NumberFormat
 
@@ -15,7 +19,16 @@ class MainActivity : AppCompatActivity() {
 
         //Listener de clique no botão Calcular
         binding.calculateButton.setOnClickListener { calculateTip() }
+
+        //Listener no EditText que espera pela tecla enter ser pressionada
+        binding.costOfServiceEditText.setOnKeyListener { view, keyCode, _ ->
+            handleKeyEvent(
+                view,
+                keyCode
+            )
+        }
     }
+
     //Método que calcula a gorjeta
     private fun calculateTip(){
 
@@ -47,5 +60,16 @@ class MainActivity : AppCompatActivity() {
 
         //Exibindo o valor da gorjeta
         binding.tipResult.text = getString(R.string.total_da_gorjeta, formatedTip)
+    }
+    // Key Listener para esconder o teclado quando a tecla "enter" for apertada.
+    private fun handleKeyEvent(view: View, keyCode: Int): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_ENTER) {
+            // Hide the keyboard
+            val inputMethodManager =
+                getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
+            return true
+        }
+        return false
     }
 }
