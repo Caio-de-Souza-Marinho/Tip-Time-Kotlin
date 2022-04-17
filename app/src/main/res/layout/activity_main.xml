@@ -67,18 +67,21 @@
 
         <RadioButton
             android:id="@+id/option_twenty_percent"
+            style="@style/Widget.TipTime.CompoundButton.RadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/servico_incrivel_20" />
 
         <RadioButton
             android:id="@+id/option_eighteen_percent"
+            style="@style/Widget.TipTime.CompoundButton.RadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/servico_bom_18" />
 
         <RadioButton
             android:id="@+id/option_fifteen_percent"
+            style="@style/Widget.TipTime.CompoundButton.RadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/servico_regular_15" />
